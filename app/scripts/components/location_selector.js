@@ -1,11 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
+import Map from './map';
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
     // set bindings
     this.toggleDock = this.toggleDock.bind(this);
+    this.locationUrl = 'https://s3.amazonaws.com/public.earshotinc.com/locations.json';
 
     this.state = {docked: false, locations: []};
   }
@@ -15,8 +17,8 @@ export default class extends React.Component {
   }
 
   loadLocations() {
-    $.getJSON('https://s3.amazonaws.com/public.earshotinc.com/locations.json', (data) => {
-      this.setState(locations: data);
+    $.getJSON(this.locationUrl, (data) => {
+      this.setState({locations: data});
     });
   }
 
@@ -31,8 +33,13 @@ export default class extends React.Component {
       'is-docked': this.state.docked
     });
     return (
-      <div className={selectorClasses}>
-
+      <div className={selectorClasses} id="selector">
+        <div className="Selector-show">
+          <div className="Selector-list">list of locations</div>
+          <div className="Selector-map">
+            <Map />
+          </div>
+        </div>
       </div>
     );
   }

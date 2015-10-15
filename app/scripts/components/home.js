@@ -21,8 +21,14 @@ export default class extends React.Component {
           <div className="u-dim">
             <h1>Location Selector</h1>
           </div>
-          <div className="Home-add u-clickable" onClick={this.toggleSelector}>
-            <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          <div className="Home-add">
+            <button className="btn btn-primary AddButton"
+                    data-toggle="collapse"
+                    data-target="#selector"
+                    aria-expanded="false"
+                    aria-controls="selector">
+              +
+            </button>
           </div>
         </div>
         <LocationSelector onAdd={this.onAdd} open={this.state.selectorOpen} />
