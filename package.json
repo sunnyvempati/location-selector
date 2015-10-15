@@ -1,7 +1,9 @@
 {
   "name": "location-selector",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "classnames": "^2.1.5"
+  },
   "devDependencies": {
     "babel-jest": "^5.0.1",
     "babelify": "^6.0.2",

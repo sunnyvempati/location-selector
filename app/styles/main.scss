@@ -1,8 +1,12 @@
 $icon-font-path: "/fonts/bootstrap/";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "variables";
+@import "utils";
+@import "selector";
+@import "home";
 
 body {
-  background: #fafafa;
+  background: $home-background-color;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }

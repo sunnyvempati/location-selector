@@ -1,38 +1,31 @@
 import React from 'react';
+import Table from './table';
+import LocationSelector from './location_selector';
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {items: []};
-  }
-
-  renderItems() {
-    let items = this.state.items;
-    if (items.length) {
-      let rows = this.state.items.map((item) => {
-        return (
-          <tr>
-            <td>{item.name}</td>
-            <td>{item.location}</td>
-          </tr>
-        )
-      });
-      return (
-        <table className="table">
-          <tr>
-            <th>Name</th>
-            <th>Location</th>
-          </tr>
-          {rows}
-        </table>
-      );
-    }
-    else return (
-      <h3> No location selected </h3>
-    );
+    // selector states
+    // 0: close
+    // 1: open inline
+    // 2: open docked
+    this.state = {items: [], selectorState: 0};
   }
 
   render() {
-    return this.renderItems();
+    return (
+      <div className="HomeContainer">
+        <div className="Home-title">
+          <div><h1>Location Selector</h1></div>
+          <div className="Home-add u-clickable">
+            <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </div>
+        </div>
+        <LocationSelector onAdd={this.onAdd} state={this.state.selectorState} />
+        <div className="Home-table">
+          <Table items={this.state.items} />
+        </div>
+      </div>
+    );
   }
 }

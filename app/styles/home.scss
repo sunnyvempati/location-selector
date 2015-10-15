@@ -1,0 +1,22 @@
+.HomeContainer {
+  padding: $size-increment*4;
+}
+
+.Home {
+  &-title {
+    display: flex;
+    padding-bottom: $size-increment*2;
+  }
+
+  &-add {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 30px;
+  }
+
+  &-table {
+    width: 80%;
+  }
+}
