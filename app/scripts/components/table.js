@@ -27,7 +27,7 @@ export default class extends React.Component {
       );
     }
     else return (
-      <h3> No location selected </h3>
+      <div className="u-italics"> No location selected </div>
     );
   }
 
