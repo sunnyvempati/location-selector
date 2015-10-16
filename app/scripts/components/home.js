@@ -1,17 +1,12 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Table from './table';
 import LocationSelector from './location_selector';
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    // set bindings
-    this.toggleSelector = this.toggleSelector.bind(this);
     this.state = {items: [], selectorOpen: false};
-  }
-
-  toggleSelector() {
-    this.setState({selectorOpen: !this.state.selectorOpen});
   }
 
   render() {
@@ -22,16 +17,10 @@ export default class extends React.Component {
             <h1>Location Selector</h1>
           </div>
           <div className="Home-add">
-            <button className="btn btn-primary AddButton"
-                    data-toggle="collapse"
-                    data-target="#selector"
-                    aria-expanded="false"
-                    aria-controls="selector">
-              +
-            </button>
+            <span className="glyphicon glyphicon-plus u-clickable" aria-hidden="true" onClick={this.toggleSelector}></span>
           </div>
         </div>
-        <LocationSelector onAdd={this.onAdd} open={this.state.selectorOpen} />
+        <LocationSelector onAdd={this.onAdd} />
         <hr />
         <div className="Home-table">
           <Table items={this.state.items} />

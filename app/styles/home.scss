@@ -13,13 +13,11 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-size: 30px;
+    opacity: 0.5;
   }
 
   &-table {
     width: 80%;
   }
-}
-
-.AddButton {
-  font-size: 30px;
 }

@@ -2,7 +2,8 @@
   "name": "location-selector",
   "version": "0.0.0",
   "dependencies": {
-    "classnames": "^2.1.5"
+    "classnames": "^2.1.5",
+    "react-google-maps": "^4.2.0"
   },
   "devDependencies": {
     "babel-jest": "^5.0.1",
@@ -27,8 +28,7 @@
     "harmonize": "^1.4.0",
     "react": "^0.14.0",
     "vinyl-source-stream": "^1.0.0",
-    "watchify": "^2.3.0",
-    "react-gmaps": "^1.0.1"
+    "watchify": "^2.3.0"
   },
   "engines": {
     "node": ">=0.10.0"
