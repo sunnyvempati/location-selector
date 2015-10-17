@@ -1,0 +1,23 @@
+.LocationListContainer {
+  column-count: 2;
+  column-gap: 0;
+}
+
+.GroupedList {
+  border-left: 2px solid #E0E0E0;
+  &-header,
+  &-checkbox {
+    padding: $size-increment*2;
+    width: 100%;
+    border-bottom: 1px solid #E0E0E0;
+  }
+
+  &-header {
+    background-color: #E8E8E8;
+    font-weight: 500;
+  }
+
+  &-checkbox {
+    margin: 0 $size-increment;
+  }
+}

@@ -7,12 +7,14 @@ export default class extends React.Component {
 
   renderItems() {
     let items = this.props.items;
+    console.log(items);
     if (items.length) {
       let rows = this.props.items.map((item) => {
         return (
           <tr>
             <td>{item.name}</td>
-            <td>{item.location}</td>
+            <td>{item.city}</td>
+            <td>{item.address}</td>
           </tr>
         )
       });
@@ -20,9 +22,12 @@ export default class extends React.Component {
         <table className="table">
           <tr>
             <th>Name</th>
-            <th>Location</th>
+            <th>City</th>
+            <th>Address</th>
           </tr>
+          <tbody>
           {rows}
+          </tbody>
         </table>
       );
     }

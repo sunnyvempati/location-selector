@@ -1,9 +1,8 @@
 .SelectorContainer {
   height: 400px;
   background-color: $home-background-color;
-  // max-height: 0;
-  // opacity: 0;
-  // transition: all 0.5s;
+  display: flex;
+  >* { flex: 1; }
 
   &.is-open {
     opacity: 1;
@@ -21,20 +20,34 @@
 
 .Selector {
   &-actions {
+    display: flex;
     padding: $size-increment*2;
+    >* { flex: 1; }
   }
 
   &-show {
-    display: flex;
     height: 100%;
-    >* { flex: 1; }
+    overflow: hidden;
+  }
+
+  &-list {
+    height: 100%;
+    overflow: scroll;
   }
 
   &-map {
     height: 100%;
   }
+}
 
-  &-list {
-    overflow: scroll;
-  }
+.Actions-dock {
+  font-size: 20px;
+  opacity: 0.75;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.SelectorItems {
+  padding-left: $size-increment;
 }
