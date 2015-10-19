@@ -78,6 +78,13 @@ export default class extends React.Component {
       'is-small': this.state.viewId == 2,
       'is-docked': this.state.docked
     });
+    let toggleDockIconClasses = classnames({
+      'glyphicon': true,
+      'glyphicon-resize-small': this.state.docked,
+      'glyphicon-resize-full': !this.state.docked,
+      'u-clickable': true,
+      'SelectorItems': true
+    });
     return (
       <div className={selectorClasses}>
         <div className="Selector-show">
@@ -89,8 +96,8 @@ export default class extends React.Component {
               <span className="glyphicon glyphicon-unchecked u-clickable SelectorItems" onClick={this.massCheckChange.bind(this, false)} aria-hidden="true"></span>
             </div>
             <div className="Actions-dock">
-              <span className="glyphicon glyphicon-th-large u-clickable SelectorItems" aria-hidden="true" onClick={this.toggleView}></span>
-              <span className="glyphicon glyphicon-resize-full u-clickable SelectorItems" aria-hidden="true" onClick={this.toggleDock}></span>
+              <span className="glyphicon glyphicon-th-large u-clickable SelectorItems" aria-hidden="true" onClick={this.toggleView} title="Toggle View"></span>
+              <span className={toggleDockIconClasses} aria-hidden="true" onClick={this.toggleDock} title="(un)Dock dialog"></span>
             </div>
           </div>
           <div className="Selector-list">
