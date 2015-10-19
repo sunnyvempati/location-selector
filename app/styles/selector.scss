@@ -2,7 +2,13 @@
   height: 400px;
   background-color: $home-background-color;
   display: flex;
-  >* { flex: 1; }
+  &.is-small {
+    >* { flex: 1; }
+  }
+
+  &.is-large {
+    & .Selector-show { width: 100%; }
+  }
 
   &.is-open {
     opacity: 1;
@@ -11,10 +17,10 @@
 
   &.is-docked {
     position: fixed;
-    bottom: 0; right: 0; left: 50%;
+    bottom: 0; right: 0; left: 20%;
     min-width: 320px;
     overflow: auto;
-    background-color: #D0D0D0;
+    background-color: #E8E8E8;
   }
 }
 
@@ -41,13 +47,21 @@
 }
 
 .Actions-dock {
-  font-size: 20px;
-  opacity: 0.75;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
+.Actions-items {
+  display: flex;
+  align-items: center;
+  padding-left: $size-increment;
+  >* { margin-left: $size-increment; }
+}
+
 .SelectorItems {
   padding-left: $size-increment;
+  font-size: 20px;
+  opacity: 0.75;
+  padding: 0 4px;
 }

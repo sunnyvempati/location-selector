@@ -7,9 +7,10 @@ export default class extends React.Component {
 
   renderItems() {
     let items = this.props.items;
-    console.log(items);
-    if (items.length) {
-      let rows = this.props.items.map((item) => {
+    let itemKeys = Object.keys(this.props.items);
+    if (itemKeys.length) {
+      let rows = itemKeys.map((key) => {
+        let item = items[key];
         return (
           <tr>
             <td>{item.name}</td>
